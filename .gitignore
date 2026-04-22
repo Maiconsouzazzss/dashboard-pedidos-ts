@@ -1,0 +1,12 @@
+# Dependências (se você usar Node/NPM)
+node_modules/
+
+# Logs e arquivos de sistema
+*.log
+.DS_Store
+Thumbs.db
+
+# Arquivos sensíveis ou temporários
+.env
+dist/
+build/
