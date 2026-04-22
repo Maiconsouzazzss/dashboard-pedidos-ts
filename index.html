@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard de Pedidos (TS)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <h1>📦 Dashboard de Pedidos</h1>
+    <p class="tech-stack">
+      Aplicação focada em manipulação de dados: 
+      <code>reduce()</code> para métricas e <code>map()</code> para renderização (TypeScript).
+    </p>
+  </div>
+</header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="filters">
+        <label class="field">
+          <span>Buscar cliente</span>
+          <input id="q" type="text" placeholder="Ex: Ana" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span>Status</span>
+          <select id="status">
+            <option value="todos">Todos</option>
+            <option value="pago">Pago</option>
+            <option value="pendente">Pendente</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Categoria</span>
+          <select id="categoria">
+            <option value="todas">Todas</option>
+            <option value="assinatura">Assinatura</option>
+            <option value="produto">Produto</option>
+            <option value="servico">Serviço</option>
+          </select>
+        </label>
+
+        <button id="reset" class="btn">Limpar</button>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <div class="k">Total de pedidos</div>
+        <div class="v" id="cTotalPedidos">0</div>
+      </div>
+      <div class="card">
+        <div class="k">Total pago</div>
+        <div class="v" id="cTotalPago">R$ 0,00</div>
+      </div>
+      <div class="card">
+        <div class="k">Total pendente</div>
+        <div class="v" id="cTotalPendente">R$ 0,00</div>
+      </div>
+      <div class="card">
+        <div class="k">Média dos pagos</div>
+        <div class="v" id="cMediaPago">R$ 0,00</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <section class="panel">
+        <h2>📊 Resumo por categoria</h2>
+        <div id="porCategoria" class="mini"></div>
+        <section class="panel panel-grafico">
+  <h2>📈 Status dos Pedidos</h2>
+  <canvas id="meuGrafico"></canvas>
+</section>
+      </section>
+
+      <section class="panel">
+        <h2>🧾 Pedidos</h2>
+        <div id="lista" class="list"></div>
+      </section>
+    </section>
+  </main>
+
+  <!-- Apontar para o JS compilado -->
+  <script type="module" src="./js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
